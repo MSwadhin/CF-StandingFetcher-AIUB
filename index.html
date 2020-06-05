@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>AIUB Standing Fetcher (CF)</title>
+
+
+    <style>
+        #main{
+            padding-left : 60px;
+            padding-right : 60px;
+            margin-left : 120px;
+            margin-right: 120px;
+        }
+        h2{
+            margin:60px;
+            color: #007bff;
+        }
+        #container{
+            color:#007bff;
+            font-size : 18px;
+        }
+        .alert{
+            font-size: 28px;
+        }
+
+        .row-full{
+            margin-bottom: 60px !important;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="main" class="container center text-center">
+        <div class="row-full center text-center">
+            <h2 class="center text-center">
+                Codeforces Contest Standing (AIUB)
+            </h2>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Contest Id:</label>
+                <input type="text" class="form-control" id="contestId" aria-describedby="emailHelp" placeholder="1352">
+            </div>
+            <button type="" onclick="perform()" class="btn btn-primary">Get Ranklist</button>
+        </div>
+        <br>
+        <div class="row-full center text-cente">
+            <div id="container" class="">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function perform(){
+            var contentLoading = "<div class='alert alert-danger text-center' role='alert'>Ranklist Loading</div>";
+            // var contentLoading = "<p class='text-red'>Loading</p>";
+            document.getElementById("container").innerHTML = contentLoading;
+            var id = document.getElementById("contestId").value;
+            getContestStanding(id);
+        }
+    </script>
+
+</body>
+</html>
