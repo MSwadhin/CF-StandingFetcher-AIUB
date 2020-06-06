@@ -32,6 +32,7 @@ function fetch(userList,contestId){
         }
     }
     url += names;
+    url += "&showUnofficial=false";
     console.log(url);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function(){
@@ -50,6 +51,7 @@ function fetch(userList,contestId){
                         var name  = "";
                         if( typeof(userList[j].firstName)=="string" ){
                             name += userList[j].firstName;
+                            name += " ";
                         }
                         if( typeof(userList[j].lastName)=="string" ){
                             name += userList[j].lastName;
